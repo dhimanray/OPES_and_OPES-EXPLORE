@@ -1,0 +1,22 @@
+# vim:ft=plumed
+UNITS NATURAL
+
+p: POSITION ATOM=1
+
+doubleWell: CUSTOM ARG=p.x,p.y PERIODIC=NO ...
+  FUNC=2*(x^4+y^4-2*x^2-4*y^2+2*x*y+0.8*x+0.1*y+9.28)
+...
+potential: BIASVALUE ARG=doubleWell
+
+ 
+opes: OPES_METAD ...
+  ARG=p.x
+  PACE=100
+  BARRIER=20
+...
+
+
+PRINT FMT=%g STRIDE=100 FILE=COLVAR ARG=p.x,p.y,opes.bias
+
+ENDPLUMED
+
