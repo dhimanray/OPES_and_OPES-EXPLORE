@@ -13,12 +13,20 @@ opes: OPES_METAD ...
   ARG=p.x
   PACE=100
   BARRIER=20
+  FILE=Kernels.data
+  STATE_RFILE=compressed.Kernels
+  STATE_WFILE=compressed.Kernels
+  STATE_WSTRIDE=5000
 ...
 
 opesE: OPES_METAD_EXPLORE ...
   ARG=p.x
   PACE=100
   BARRIER=10
+  FILE=KernelsE.data
+  STATE_RFILE=compressed.KernelsE
+  STATE_WFILE=compressed.KernelsE
+  STATE_WSTRIDE=5000
 ...
 
 
